@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Images One by One</title>
+</head>
+<body>
+  <h2>Display Images One by One</h2>
+  <div id="imageContainer"></div>
+
+  <script>
+    var imageNames = [ "p6.jpg", "p8.jpg", "p7.jpg", "p2.jpg"];
+    var currentIndex = 0;
+
+    function displayNextImage() {
+      var image = document.createElement("img");
+      image.src = imageNames[currentIndex];
+      image.alt = "Image " + (currentIndex + 1);
+      document.getElementById("imageContainer").appendChild(image);
+
+      currentIndex++;
+      if (currentIndex < imageNames.length) {
+        setTimeout(displayNextImage, 1000);
+      }
+    }
+    displayNextImage();
+  </script>
+</body>
+</html>

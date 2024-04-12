@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 50%;
+      }
+      th, td {
+        border: 1px solid rgb(146, 44, 44);
+        padding: 15px;
+        text-align: left;
+      }
+      tr:nth-child(even) {
+        background-color: #544d4d;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="myTable">
+      <tr>
+        <th>S.N.</th>
+        <th>Name</th>
+        <th>Image</th>
+      </tr>
+    </table>
+
+    <script>
+      const data = [
+        {id: 1, name: 'Name 1', image: 'p3.jpg'},
+        {id: 2, name: 'Name 2', image: 'p6.jpg'},
+        {id: 3, name: 'Name 3', image: 'p7.jpg'},
+        {id: 4, name: 'Name 4', image: 'p8.jpg'},
+      ];
+      const tableBody = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+      for (let i = 0; i < data.length; i++) {
+        const row = tableBody.insertRow(-1);
+        const snCell = row.insertCell(0);
+        snCell.innerHTML = data[i].id;
+        const nameCell = row.insertCell(1);
+        nameCell.innerHTML = data[i].name;
+        const imageCell = row.insertCell(2);
+        const image = document.createElement('img');
+        image.src = `images/${data[i].image}`;
+        image.alt = `Image for ${data[i].name}`;
+        imageCell.appendChild(image);
+      }
+    </script>
+  </body>
+</html>

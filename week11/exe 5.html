@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-group">
+    <label for="valueInput">Enter a value:</label>
+    <input type="text" id="valueInput">
+    <button onclick="checkNaN()">Check NaN</button>
+    <p id="nanResult" class="result"></p>
+</div>
+
+<div class="form-group">
+    <label for="passwordInput">Enter Password:</label>
+    <input type="password" id="passwordInput"><br>
+    <label for="confirmPasswordInput">Confirm Password:</label>
+    <input type="password" id="confirmPasswordInput">
+    <button onclick="checkPasswordMatch()">Check Password Match</button>
+    <p id="passwordMatchResult" class="result"></p>
+</div>
+
+<script>
+function checkNaN() {
+    const value = document.getElementById('valueInput').value;
+    const resultElement = document.getElementById('nanResult');
+    resultElement.textContent = isNaN(value) ? 'The entered value is NaN.' : 'The entered value is not NaN.';
+}
+
+function checkPasswordMatch() {
+    const password = document.getElementById('passwordInput').value;
+    const confirmPassword = document.getElementById('confirmPasswordInput').value;
+    const resultElement = document.getElementById('passwordMatchResult');
+    
+    resultElement.textContent = password === confirmPassword ? 'Passwords match.' : 'Passwords do not match.';
+}
+</script>
+
+</body>
+</html>

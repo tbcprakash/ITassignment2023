@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+</head>
+<body>
+
+<div id="myDiv">Mouse Over Me</div>
+
+<script>
+const divElement = document.getElementById('myDiv');
+function mOver() {
+    divElement.textContent = "Thank You!";
+}
+function mOut() {
+    divElement.textContent = "Mouse Over Me";
+}
+divElement.addEventListener('mouseover', mOver);
+divElement.addEventListener('mouseout', mOut);
+</script>
+
+</body>
+</html>

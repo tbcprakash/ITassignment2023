@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="validation.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="final.html">Home</a></li>
+        <li><a href="contact.html">Contact </a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="Orders.html">Orders</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<div class="content">
+    <h1>Orders</h1>
+    <form id="contactForm" action="submit.php" method="POST" onsubmit="return validateForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br><br>
+      <label for="address">Address:</label>
+      <input type="Address" id="Address" name="Address" required><br><br><br>
+      <label for="product name">Product Name:</label>
+      <input type="Product Name" id="Product Name" name="Product Name" required><br><br><br>
+      <label for="gender">Gender:</label>
+      <input type="Gender" id="Gender" name="Gender" required><br><br><br>
+      <label for="Height">Height:</label>
+      <input type="Height" id="Height" name="Height" required><br><br><br>
+      <label for="Weight">Weight:</label>
+      <input type="Weight" id="Weight" name="Weight" required><br><br><br>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="8" coloum="10"   required></textarea><br><br><br>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <footer>
+    <p>&copy; Shopping With Me | Address: Kathmandu-thapathali | Email: Prakashshah1234@gmail.com</p>
+  </footer>
+</body>
+

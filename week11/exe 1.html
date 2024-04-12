@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Display Date and Time</title>
+    <style>
+        #dateTime {
+            font-size: 18px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Date and Time Display</h1>
+
+<p id="dateTime"></p>
+
+<script>
+function getCurrentDateTime() {
+    const now = new Date();
+    
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const dateTimeString = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+    return dateTimeString;
+}
+const dateTimeParagraph = document.getElementById('dateTime');
+dateTimeParagraph.textContent = getCurrentDateTime();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Add and Display</title>
+</head>
+<body>
+    <h1>Array Add and Display</h1>
+    <button onclick="addItem()">Add</button>
+    <button onclick="displayItems()">Display</button>
+    <div id="result"></div>
+
+    <script>
+        const arr = [];
+        function addItem() {
+            const item = prompt("Enter the item to add:");
+            if (item !== null && item !== "") {
+                arr.push(parseInt(item, 10));
+            }
+        }
+        function displayItems() {
+            let result = "";
+            for (let i = 0; i < arr.length; i++) {
+                result += `Element ${i} = ${arr[i]}\n`;
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

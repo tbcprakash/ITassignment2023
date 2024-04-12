@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum and Product Calculator</title>
+</head>
+<body>
+
+<h1>Sum and Product Calculator</h1>
+
+<p>Enter numbers separated by commas:</p>
+<input type="text" id="numbersInput">
+<button onclick="calculate()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+function calculate() {
+    const numbersInput = document.getElementById('numbersInput').value;
+    const numbersArray = numbersInput.split(',').map(Number);
+
+    const sum = numbersArray.reduce((acc, cur) => acc + cur, 0);
+    const product = numbersArray.reduce((acc, cur) => acc * cur, 1);
+
+    const resultElement = document.getElementById('result');
+    resultElement.textContent = `Sum: ${sum}, Product: ${product}`;
+}
+</script>
+
+</body>
+</html>
